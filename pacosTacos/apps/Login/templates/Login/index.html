@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Pacos Tacos</title>
+</head>
+<body>
+	<h1>Pacos Tacos</h1>
+	<h3>The Best Friend Finder based on Tacos</h3>
+	<p>Find yourself with a lack of friends?</p>
+	<p>We can help fill that void in your life. Here at Pacos Tacos with specialize in matching you with your perfect friend based on our taco-based algorithm. Let us help season up your life</p>
+	<h2>Register New User</h2>
+	<form action="{% url 'login:register' %}" method="POST">
+		{% csrf_token %}
+		<label for="name">Name: </label>
+		<input type="text" name="name">
+		<label for="username">Username: </label>
+		<input type="text" name="username">
+		<label for="email">Email: </label>
+		<input type="text" name="email">
+		<label for="password">Password: </label>
+		<input type="password" name="password">
+		<label for="confPassword">Confirm Password: </label>
+		<input type="password" name="confPassword">
+		<input type="submit" name="register" value="Register!">
+	</form>
+	<h2>Returning User</h2>
+	<form action="{% url 'login:login' %}" method="POST">
+		{% csrf_token %}
+		<label for="email">Email: </label>
+		<input type="text" name="email" >
+		<label for="password">Password: </label>
+		<input type="password" name="password">
+		<input type="submit" name="login" value="Login!">
+	</form>
+</body>
+</html>
